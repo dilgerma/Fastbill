@@ -62,17 +62,60 @@ class Customer
     private $bankAccountNumber;
     private $bankAccountOwner;
 
+
+    public function toArray()
+    {
+        return array();
+    }
+
     public function validate()
     {
         if (!in_array($this->type, array(self::TYPE_BUSINESS, self::TYPE_CONSUMER))) {
             throw new ValidationException('Customertype is wether ' . self::TYPE_BUSINESS . ' nor' . self::TYPE_CONSUMER);
         }
 
+        if ($this->type == self::TYPE_BUSINESS && !$this->organization) {
+            throw new ValidationException('Organization is required, when type is business');
+        } elseif ($this->type == self::TYPE_CONSUMER && !$this->lastName) {
+            throw new ValidationException('Lastname is required, when type is consumer');
+        }
 
+        if (!in_array($this->countryCode, array(self::COUNTRY_AT, self::COUNTRY_CH, self::COUNTRY_DE))) {
+            throw new ValidationException('CountryCode ist not set or not allowed');
+        }
+
+        if ($this->currencyCode && !in_array($this->currencyCode, array(self::CURR_CHF, self::CURR_EUR, self::CURR_GBP, self::CURR_USD))) {
+            throw new ValidationException('CurrencyCode ist not allowed');
+        }
+
+        $allowedPayments = array(
+            self::PAYMENT_ADVANCEPAYMENT,
+            self::PAYMENT_BANKTRANSFER,
+            self::PAYMENT_CASH,
+            self::PAYMENT_CASH,
+            self::PAYMENT_CREDITCARD,
+            self::PAYMENT_DIRECTDEBIT
+        );
+
+        if (!in_array($this->paymentType, $allowedPayments)) {
+            throw new ValidationException('Paymenttype is not allowed or not set');
+        }
+
+        if ($this->paymentType === self::PAYMENT_DIRECTDEBIT) {
+            if (!$this->bankName) {
+                throw new ValidationException('Bankname is required, if paymenty type is directdebit');
+            }
+            if (!$this->bankCode) {
+                throw new ValidationException('Bankcode is required, if paymenty type is directdebit');
+            }
+            if (!$this->bankAccountNumber) {
+                throw new ValidationException('BankAccountNumber is required, if paymenty type is directdebit');
+            }
+            if (!$this->bankAccountOwner) {
+                throw new ValidationException('BankAccountOwner is required, if paymenty type is directdebit');
+            }
+        }
     }
 
-    public function toArray()
-    {
-        return array();
-    }
+
 }

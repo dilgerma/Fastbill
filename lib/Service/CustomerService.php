@@ -27,6 +27,7 @@ class CustomerService extends AbstractService
      */
     public function create(Customer $customer)
     {
+        $customer->validate();
         $response = $this->call($customer->toArray());
         return (int)$response['CUSTOMER_ID'];
     }

@@ -30,6 +30,7 @@ class Fastbill
     public function __construct(HttpClient $httpClient)
     {
         $this->httpClient = $httpClient;
+        $this->httpClient->setUrl(self::URL);
     }
 
     /**

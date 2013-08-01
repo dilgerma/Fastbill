@@ -19,7 +19,9 @@ class CurlHttpClient implements HttpClient
         $this->handle = curl_init();
         curl_setopt_array($this->handle, array(
                 CURLOPT_POST => true,
-                CURLOPT_RETURNTRANSFER => true
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_SSL_VERIFYHOST => true,
+                CURLOPT_SSL_VERIFYPEER => true
             )
         );
     }
