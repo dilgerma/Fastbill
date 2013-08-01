@@ -1,7 +1,11 @@
 <?php
+namespace Fastbill;
+
+use Fastbill\lib\HttpClient;
+use Fastbill\Service\Customer;
 
 require_once __DIR__ . '/lib/HttpClient.php';
-require_once __DIR__ . '/lib/FastbillCustomer.php';
+require_once __DIR__ . '/lib/Service/Customer.php';
 
 class Fastbill 
 {
@@ -42,12 +46,12 @@ class Fastbill
     }
 
     /**
-     * @return FastbillCustomer
+     * @return Customer
      */
     public function getCustomerService()
     {
         if (!isset($this->services['customer'])) {
-            $this->services['customer'] = new FastbillCustomer($this);
+            $this->services['customer'] = new Customer($this);
         }
         return $this->services['customer'];
     }
