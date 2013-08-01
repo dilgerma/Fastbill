@@ -70,4 +70,9 @@ class Customer
 
 
     }
+
+    public function toArray()
+    {
+        return array();
+    }
 }

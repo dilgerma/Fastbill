@@ -1,32 +1,31 @@
 <?php
 namespace Fastbill;
 
+use Fastbill\lib\CurlHttpClient;
 use Fastbill\lib\HttpClient;
-use Fastbill\Service\Customer;
+use Fastbill\Service\CustomerService;
 
 require_once __DIR__ . '/lib/HttpClient.php';
-require_once __DIR__ . '/lib/Service/Customer.php';
+require_once __DIR__ . '/lib/Service/CustomerService.php';
 
 class Fastbill 
 {
     const URL = 'https://my.fastbill.com/api/1.0/api.php';
 
-    /** @var string */
-    private $email;
-
-    /** @var string */
-    private $apikey;
-
-    /** @var string */
-    private $customerEmail;
-
-    /** @var string */
-    private $customerPassword;
-
     /** @var HttpClient */
     private $httpClient;
 
     private $services = array();
+
+    /**
+     * Creates a Fastbill Instance with Curl as the HttpClient
+     * @return Fastbill
+     */
+    public static function createWithCurl()
+    {
+        require_once __DIR__ . '/lib/CurlHttpClient.php';
+        return new Fastbill(new CurlHttpClient());
+    }
 
     public function __construct(HttpClient $httpClient)
     {
@@ -38,22 +37,10 @@ class Fastbill
      * @param $apikey string
      * @return Fastbill
      */
-    public function setCredentials($email, $apikey)
+    public function setApiCredentials($email, $apikey)
     {
-        $this->email = $email;
-        $this->apikey = $apikey;
+        $this->httpClient->addHeader('Authorization', base64_encode($email.':'.$apikey));
         return $this;
-    }
-
-    /**
-     * @return Customer
-     */
-    public function getCustomerService()
-    {
-        if (!isset($this->services['customer'])) {
-            $this->services['customer'] = new Customer($this);
-        }
-        return $this->services['customer'];
     }
 
     /**
@@ -61,21 +48,23 @@ class Fastbill
      * @param $password string
      * @return Fastbill
      */
-    public function setCustomer($email, $password)
+    public function setUserCredentials($email, $password)
     {
-        $this->customerEmail = $email;
-        $this->customerPassword = $password;
+        $this->httpClient->addHeader('X-Username', $email);
+        $this->httpClient->addHeader('X-Password', $password);
         return $this;
 
     }
 
-    protected function call($request)
+    /**
+     * @return CustomerService
+     */
+    public function getCustomerService()
     {
-        //–u {E-Mail-Adresse}:{API-Key} \
-        //-H 'Content-Type: application/xml'
-        /*
-         * -H 'X-Username: {E-Mail Adresse des Benutzers}'\
-            -H 'X-Password: {Passwort des Benutzers}' \
-         */
+        if (!isset($this->services['customer'])) {
+            $this->services['customer'] = new CustomerService($this->httpClient);
+        }
+        return $this->services['customer'];
     }
+
 }
