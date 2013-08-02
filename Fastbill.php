@@ -4,9 +4,11 @@ namespace Fastbill;
 use Fastbill\lib\CurlHttpClient;
 use Fastbill\lib\HttpClient;
 use Fastbill\Service\CustomerService;
+use Fastbill\Service\InvoiceService;
 
 require_once __DIR__ . '/lib/HttpClient.php';
 require_once __DIR__ . '/lib/Service/CustomerService.php';
+require_once __DIR__ . '/lib/Service/InvoiceService.php';
 
 class Fastbill 
 {
@@ -66,6 +68,17 @@ class Fastbill
             $this->services['customer'] = new CustomerService($this->httpClient);
         }
         return $this->services['customer'];
+    }
+
+    /**
+     * @return InvoiceService
+     */
+    public function getInvoiceService()
+    {
+        if (!isset($this->services['invoice'])) {
+            $this->services['invoice'] = new InvoiceService($this->httpClient);
+        }
+        return $this->services['invoice'];
     }
 
 }

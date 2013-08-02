@@ -22,14 +22,18 @@ abstract class AbstractService
     abstract protected function getServiceName();
 
     /**
-     * @param array $request
+     * @param $request array
+     * @param $method string
+     * @throws \Fastbill\lib\ApiException
      * @return array
-     * @throws HttpClientException
-     * @throws ApiException
      */
-    final public function call(array $request)
+    final public function call(array $request, $method)
     {
-        $body = json_encode($request);
+        $finalRequest = array(
+            'SERVICE' => $this->getServiceName() . '.' . $method,
+            'DATA' => $request
+        );
+        $body = json_encode($finalRequest);
         $this->httpClient->addHeader('Content-Length', strlen($body));
         $response = $this->httpClient->request($body);
         if (isset($response['ERRORS'])) {

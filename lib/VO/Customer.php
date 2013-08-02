@@ -122,7 +122,7 @@ class Customer
     private $bankAccountOwner;
 
 
-    public function toCreateArray()
+    public function toArray()
     {
         return array(
             'CUSTOMER_NUMBER' => $this->number,
