@@ -46,13 +46,15 @@ class InvoiceService extends AbstractService
         return (int)$response['INVOICE_ID'];
     }
 
-    public function update(Invoice $invoice)
+    public function update(Invoice $invoice, $deleteExistingItems = false)
     {
         if (!$invoice->getId()) {
             throw new ValidationException('id is required');
         }
         $invoice->validate();
-        $this->call($invoice->toArray(), 'update');
+        $array = $invoice->toArray();
+        $array['DELETE_EXISTING_ITEMS'] = $deleteExistingItems ? 1 : 0;
+        $this->call($array, 'update');
     }
 
     public function delete($invoiceId)
