@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/D/www/Fastbill"
+			"path": ".",
+      "folder_exclude_patterns":["vendor"]
 		}
 	]
 }

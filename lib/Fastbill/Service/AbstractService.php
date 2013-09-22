@@ -5,9 +5,9 @@ namespace Fastbill\Service;
 
 
 use Fastbill\Fastbill;
-use Fastbill\lib\ApiException;
-use Fastbill\lib\HttpClient;
-use Fastbill\lib\HttpClientException;
+use Fastbill\ApiException;
+use Fastbill\HttpClient;
+use Fastbill\HttpClientException;
 
 abstract class AbstractService
 {
