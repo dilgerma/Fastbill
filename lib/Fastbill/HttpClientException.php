@@ -1,8 +1,6 @@
 <?php
 
-
-namespace Fastbill\lib;
-require_once __DIR__ . '/ApiException.php';
+namespace Fastbill;
 
 class HttpClientException extends ApiException
 {

@@ -2,8 +2,6 @@
 
 namespace Fastbill\VO;
 
-require_once __DIR__ . '/../ValidationException.php';
-
 use Fastbill\ValidationException;
 
 class Customer

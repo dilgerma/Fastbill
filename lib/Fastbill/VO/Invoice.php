@@ -5,9 +5,6 @@ namespace Fastbill\VO;
 
 use Fastbill\ValidationException;
 
-require_once __DIR__ . '/VatItem.php';
-require_once __DIR__ . '/Item.php';
-
 class Invoice 
 {
     const STATE_UNPAID = 'unpaid';

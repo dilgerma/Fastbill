@@ -7,10 +7,6 @@ use Fastbill\ValidationException;
 use Fastbill\VO\Invoice;
 use Fastbill\VO\InvoiceFilter;
 
-require_once __DIR__ . '/AbstractService.php';
-require_once __DIR__ . '/../VO/Invoice.php';
-require_once __DIR__ . '/../VO/InvoiceFilter.php';
-
 class InvoiceService extends AbstractService
 {
 

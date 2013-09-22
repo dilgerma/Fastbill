@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Fastbill\VO;
-
 
 class VatItem 
 {
