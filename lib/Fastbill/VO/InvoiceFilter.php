@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Fastbill\VO;
-require_once __DIR__ . '/AbstractFilter.php';
 
 class InvoiceFilter extends AbstractFilter
 {

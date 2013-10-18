@@ -1,9 +1,6 @@
 <?php
 
-
-namespace Fastbill\lib;
-
-require_once __DIR__ . '/HttpClient.php';
+namespace Fastbill;
 
 class CurlHttpClient implements HttpClient
 {

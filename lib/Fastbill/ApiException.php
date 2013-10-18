@@ -1,12 +1,10 @@
 <?php
 
-
 namespace Fastbill;
-
 
 use Exception;
 
-class ValidationException  extends \Exception
+class ApiException extends Exception
 {
     public function __construct($message, $code = 0)
     {

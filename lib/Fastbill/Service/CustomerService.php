@@ -1,14 +1,10 @@
 <?php
 namespace Fastbill\Service;
 
-use Fastbill\lib\ApiException;
+use Fastbill\ApiException;
 use Fastbill\ValidationException;
 use Fastbill\VO\Customer;
 use Fastbill\VO\CustomerFilter;
-
-require_once __DIR__ . '/../VO/CustomerFilter.php';
-require_once __DIR__ . '/../VO/Customer.php';
-require_once __DIR__ . '/AbstractService.php';
 
 class CustomerService extends AbstractService
 {

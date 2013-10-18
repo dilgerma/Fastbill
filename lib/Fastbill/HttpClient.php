@@ -1,7 +1,6 @@
 <?php
-namespace Fastbill\lib;
 
-require_once __DIR__ . '/HttpClientException.php';
+namespace Fastbill;
 
 interface HttpClient
 {

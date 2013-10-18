@@ -6,10 +6,7 @@ namespace Fastbill\Service;
 use Fastbill\ValidationException;
 use Fastbill\VO\Invoice;
 use Fastbill\VO\InvoiceFilter;
-
-require_once __DIR__ . '/AbstractService.php';
-require_once __DIR__ . '/../VO/Invoice.php';
-require_once __DIR__ . '/../VO/InvoiceFilter.php';
+use DateTime;
 
 class InvoiceService extends AbstractService
 {
@@ -123,7 +120,7 @@ class InvoiceService extends AbstractService
      * @param \DateTime|null $paidDate
      * @return string invoice number
      */
-    public function setPaid($invoiceId, \DateTime $paidDate = null)
+    public function setPaid($invoiceId, DateTime $paidDate = null)
     {
         $data = array(
             'INVOICE_ID' => $invoiceId

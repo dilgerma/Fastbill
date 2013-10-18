@@ -1,0 +1,32 @@
+{
+  "name":"xfragger/fastbill",
+  "authors":[
+    {
+      "name":"Michael Freund",
+      "email":"github@xfragger.de"
+    },
+    {
+      "name": "Philipp Scheit",
+      "email": "p.scheit@ps-webforge.com"
+    }
+  ],
+  "minimum-stability":"dev",
+  "require":{
+
+  },
+
+  "autoload":{
+    "psr-0":{
+      "Fastbill":[ "lib/", "tests/"]
+    }
+  },
+  "extra":{
+    "branch-alias":{
+      "dev-master":"1.0.x-dev"
+    }
+  },
+  "require-dev": {
+    "webforge/testplate": "1.2.*@dev",
+    "mockery/mockery": "dev-master"
+  }
+}

@@ -1,0 +1,389 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "5b93ab4cd1808a2da783333c8bd3002f",
+    "packages": [
+
+    ],
+    "packages-dev": [
+        {
+            "name": "doctrine/collections",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/collections.git",
+                "reference": "bcb53776a096a0c64579cc8d8ec0db62f1109fbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/bcb53776a096a0c64579cc8d8ec0db62f1109fbc",
+                "reference": "bcb53776a096a0c64579cc8d8ec0db62f1109fbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Collections\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com",
+                    "homepage": "http://www.instaclick.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Collections Abstraction library",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "array",
+                "collections",
+                "iterator"
+            ],
+            "time": "2013-08-29 16:56:45"
+        },
+        {
+            "name": "mockery/mockery",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/padraic/mockery.git",
+                "reference": "b6fe71cbc1909927b5574219ff6d50e3b264abdb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/b6fe71cbc1909927b5574219ff6d50e3b264abdb",
+                "reference": "b6fe71cbc1909927b5574219ff6d50e3b264abdb",
+                "shasum": ""
+            },
+            "require": {
+                "lib-pcre": ">=7.0",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "hamcrest/hamcrest": "1.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mockery": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pádraic Brady",
+                    "email": "padraic.brady@gmail.com",
+                    "homepage": "http://blog.astrumfutura.com"
+                }
+            ],
+            "description": "Mockery is a simple yet flexible PHP mock object framework for use in unit testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is to offer a test double framework with a succint API capable of clearly defining all possible object operations and interactions using a human readable Domain Specific Language (DSL). Designed as a drop in alternative to PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with PHPUnit and can operate alongside phpunit-mock-objects without the World ending.",
+            "homepage": "http://github.com/padraic/mockery",
+            "keywords": [
+                "BDD",
+                "TDD",
+                "library",
+                "mock",
+                "mock objects",
+                "mockery",
+                "stub",
+                "test",
+                "test double",
+                "testing"
+            ],
+            "time": "2013-08-21 19:34:19"
+        },
+        {
+            "name": "symfony/console",
+            "version": "2.1.x-dev",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console.git",
+                "reference": "a5e96b2363aca8a5400fec3bbcb3201a4b0513fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/a5e96b2363aca8a5400fec3bbcb3201a4b0513fb",
+                "reference": "a5e96b2363aca8a5400fec3bbcb3201a4b0513fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-06-11 07:34:22"
+        },
+        {
+            "name": "symfony/process",
+            "version": "2.1.x-dev",
+            "target-dir": "Symfony/Component/Process",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Process.git",
+                "reference": "be3cac4d0575bc547a0f2e85ceb4f19a5a8b3025"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/be3cac4d0575bc547a0f2e85ceb4f19a5a8b3025",
+                "reference": "be3cac4d0575bc547a0f2e85ceb4f19a5a8b3025",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Process": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-05-06 10:21:56"
+        },
+        {
+            "name": "webforge/collections",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pscheit/webforge-collections.git",
+                "reference": "4d9b9f02e8501c23202b3bf7262fe3cf39830466"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pscheit/webforge-collections/zipball/4d9b9f02e8501c23202b3bf7262fe3cf39830466",
+                "reference": "4d9b9f02e8501c23202b3bf7262fe3cf39830466",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": "1.2.*@dev"
+            },
+            "require-dev": {
+                "webforge/testplate": "1.2.*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Webforge\\Collections": [
+                        "lib/",
+                        "tests/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philipp Scheit",
+                    "email": "p.scheit@ps-webforge.com"
+                }
+            ],
+            "time": "2013-07-05 11:19:08"
+        },
+        {
+            "name": "webforge/common",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pscheit/webforge-common.git",
+                "reference": "b0bc12c29c02e8cf996b92531f3c79c682f4cc19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pscheit/webforge-common/zipball/b0bc12c29c02e8cf996b92531f3c79c682f4cc19",
+                "reference": "b0bc12c29c02e8cf996b92531f3c79c682f4cc19",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.2",
+                "symfony/console": "2.1.*@stable",
+                "symfony/process": "2.1.*@stable",
+                "webforge/collections": "1.0.*@dev"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.3.*@dev",
+                "webforge/testplate": "1.2.*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Webforge\\Common": [
+                        "lib/",
+                        "tests/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Philipp Scheit",
+                    "email": "p.scheit@ps-webforge.com"
+                }
+            ],
+            "description": "Boilerplate for Webforge and Psc - CMS",
+            "homepage": "http://github.com/pscheit/webforge-common",
+            "keywords": [
+                "framework"
+            ],
+            "time": "2013-09-13 09:14:30"
+        },
+        {
+            "name": "webforge/testplate",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pscheit/webforge-testplate.git",
+                "reference": "bbaa852ea28f5d5f69728c6dbbe89f04e3a6eee2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pscheit/webforge-testplate/zipball/bbaa852ea28f5d5f69728c6dbbe89f04e3a6eee2",
+                "reference": "bbaa852ea28f5d5f69728c6dbbe89f04e3a6eee2",
+                "shasum": ""
+            },
+            "require": {
+                "webforge/common": "1.1.*@dev"
+            },
+            "require-dev": {
+                "guzzle/guzzle": "3.5.*",
+                "webforge/translation": "1.1.*@dev",
+                "webforge/webforge": "1.4.*@dev"
+            },
+            "suggest": {
+                "guzzle/guzzle": "Needed for the GuzzleTester",
+                "mockery/mockery": "Better replacement for PHPUnits mock library"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Webforge\\Code\\Test": [
+                        "lib/",
+                        "tests/"
+                    ],
+                    "Webforge\\Common": [
+                        "D:\\www\\webforge-common\\lib"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philipp Scheit",
+                    "email": "p.scheit@ps-webforge.com"
+                }
+            ],
+            "description": "Testplate for webforge for base testcases",
+            "time": "2013-09-15 13:53:21"
+        }
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "webforge/testplate": 20,
+        "mockery/mockery": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
